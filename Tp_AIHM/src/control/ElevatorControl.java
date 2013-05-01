@@ -8,6 +8,7 @@ import view.CabinView;
 import view.ToolBarView;
 import view.ElevatorView;
 import abstraction.ElevatorAbstract;
+import form.ElevatorButton;
 import view.MainFrame;
 
 /**
@@ -37,12 +38,26 @@ public class ElevatorControl
         this.frame.init(this);
         this.cabinView.init(this);
         this.elevatorView.init(this);
+        this.toolView.init(this);
         this.abstraction.init(this);
     }
     
-    public void userPushedButton(String name)
+    public void userPushedButton(String name, boolean selection)
     {
-        
+        if(selection)
+        {
+            ((ElevatorButton)this.cabinView.getButton(name)).unSelected();
+            ((ElevatorButton)this.elevatorView.getButton(name)).unSelected();
+            ((ElevatorButton)this.toolView.getButton(name)).unSelected();
+        }
+        else
+        {
+            this.abstraction.setFloor(Integer.parseInt(name));
+            this.cabinView.getStairsDisplay().setText(name);
+            ((ElevatorButton)this.cabinView.getButton(name)).selected();
+            ((ElevatorButton)this.elevatorView.getButton(name)).selected();
+            ((ElevatorButton)this.toolView.getButton(name)).selected();
+        }
     }
 
     public CabinView getCabinView() {

@@ -37,10 +37,7 @@ public class ElevatorButton extends JButton
             @Override
             public void actionPerformed(ActionEvent e)
             {
-                if(((JButton)e.getSource()).isSelected())
-                    unSelected();
-                else
-                    selected();
+                control.userPushedButton(name,((JButton)e.getSource()).isSelected());
             }
         };
         return al;

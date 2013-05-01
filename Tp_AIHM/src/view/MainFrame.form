@@ -61,10 +61,10 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="ToolBar" min="-2" pref="25" max="-2" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="ToolBar" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="CabinPanel" pref="546" max="32767" attributes="0"/>
+                  <Component id="CabinPanel" pref="521" max="32767" attributes="0"/>
                   <Component id="ElevatorPanel" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Component id="AnimationPanel" max="32767" attributes="0"/>
@@ -84,6 +84,9 @@
         </Property>
         <Property name="rollover" type="boolean" value="true"/>
       </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="this.control.getToolView()"/>
+      </AuxValues>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
     </Container>

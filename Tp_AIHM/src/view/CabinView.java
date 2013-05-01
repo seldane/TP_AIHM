@@ -6,6 +6,7 @@ package view;
 
 import control.ElevatorControl;
 import form.ElevatorButton;
+import javax.swing.JLabel;
 
 /**
  *
@@ -17,8 +18,7 @@ public class CabinView extends javax.swing.JPanel
     /**
      * Creates new form CabinView
      */
-    public CabinView() {     
-    }
+    public CabinView() {}
     
     public void init(ElevatorControl control)
     {
@@ -67,4 +67,23 @@ public class CabinView extends javax.swing.JPanel
     private javax.swing.JLabel Title;
     private javax.swing.JButton ZeroButton;
     // End of variables declaration//GEN-END:variables
+    
+    public javax.swing.JButton getButton(String name)
+    {
+        if(name.equals("3"))
+            return this.ThirdButton;
+        else if(name.equals("2"))
+            return this.SecondButton;
+        else if(name.equals("1"))
+            return this.FirstButton;
+        else if(name.equals("0"))
+            return this.ZeroButton;
+        else
+            return null;
+    }
+
+    public JLabel getStairsDisplay() {
+        return StairsDisplay;
+    }
+    
 }
