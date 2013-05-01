@@ -50,8 +50,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Component id="ToolBar" pref="756" max="32767" attributes="0"/>
           <Group type="102" attributes="0">
-              <Component id="AnimationPanel" max="32767" attributes="0"/>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="AnimationPanel" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="ElevatorPanel" max="32767" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="CabinPanel" max="32767" attributes="0"/>
@@ -64,14 +64,15 @@
               <Component id="ToolBar" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="CabinPanel" pref="521" max="32767" attributes="0"/>
-                  <Component id="ElevatorPanel" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="AnimationPanel" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="CabinPanel" pref="521" max="32767" attributes="0"/>
+                          <Component id="ElevatorPanel" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Component id="AnimationPanel" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -91,6 +92,11 @@
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
     </Container>
     <Container class="javax.swing.JPanel" name="ElevatorPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="this.control.getElevatorView()"/>
       </AuxValues>
@@ -100,6 +106,11 @@
       </Layout>
     </Container>
     <Container class="javax.swing.JPanel" name="CabinPanel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="this.control.getCabinView()"/>
       </AuxValues>
@@ -109,11 +120,14 @@
       </Layout>
     </Container>
     <Container class="javax.swing.JPanel" name="AnimationPanel">
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="this.control.getAnimationControl().getView()"/>
+      </AuxValues>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="637" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">

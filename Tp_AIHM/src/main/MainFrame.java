@@ -5,7 +5,6 @@
 package main;
 
 import elevator.ElevatorControl;
-import elevator.ElevatorControl;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
@@ -49,7 +48,7 @@ public class MainFrame extends javax.swing.JFrame
         ToolBar = this.control.getToolView();
         ElevatorPanel = this.control.getElevatorView();
         CabinPanel = this.control.getCabinView();
-        AnimationPanel = new javax.swing.JPanel();
+        AnimationPanel = this.control.getAnimationControl().getView();
         MenuBar = new javax.swing.JMenuBar();
         Menu = new javax.swing.JMenu();
         QuitItem = new javax.swing.JMenuItem();
@@ -59,15 +58,17 @@ public class MainFrame extends javax.swing.JFrame
         ToolBar.setBackground(new java.awt.Color(255, 255, 255));
         ToolBar.setRollover(true);
 
+        ElevatorPanel.setBackground(new java.awt.Color(255, 255, 255));
         ElevatorPanel.setLayout(null);
 
+        CabinPanel.setBackground(new java.awt.Color(255, 255, 255));
         CabinPanel.setLayout(null);
 
         javax.swing.GroupLayout AnimationPanelLayout = new javax.swing.GroupLayout(AnimationPanel);
         AnimationPanel.setLayout(AnimationPanelLayout);
         AnimationPanelLayout.setHorizontalGroup(
             AnimationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 637, Short.MAX_VALUE)
         );
         AnimationPanelLayout.setVerticalGroup(
             AnimationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,7 +96,7 @@ public class MainFrame extends javax.swing.JFrame
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(ToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 756, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(AnimationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(AnimationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(ElevatorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -107,12 +108,12 @@ public class MainFrame extends javax.swing.JFrame
                 .addComponent(ToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CabinPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
-                    .addComponent(ElevatorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(AnimationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(45, 45, 45)))
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CabinPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
+                            .addComponent(ElevatorPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addComponent(AnimationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pack();

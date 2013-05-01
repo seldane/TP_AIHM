@@ -4,6 +4,7 @@
  */
 package elevator;
 
+import animation.AnimationControl;
 import main.MainFrame;
 import elevator.ElevatorButton;
 
@@ -14,6 +15,7 @@ import elevator.ElevatorButton;
 public class ElevatorControl 
 {
     private MainFrame frame;
+    private AnimationControl animationControl;
     private CabinView cabinView;
     private ElevatorView elevatorView;
     private ToolBarView toolView;
@@ -26,6 +28,7 @@ public class ElevatorControl
         this.elevatorView = new ElevatorView();
         this.toolView = new ToolBarView();
         this.abstraction = new ElevatorAbstract();
+        this.animationControl = new AnimationControl();
     }
     
     public void init(MainFrame frame)
@@ -36,6 +39,7 @@ public class ElevatorControl
         this.elevatorView.init(this);
         this.toolView.init(this);
         this.abstraction.init(this);
+        this.animationControl.init(this);
     }
     
     public void userPushedButton(String name, boolean selection)
@@ -48,6 +52,7 @@ public class ElevatorControl
         }
         else
         {
+            this.animationControl.userPushedButton(Integer.parseInt(name));
             this.abstraction.setFloor(Integer.parseInt(name));
             this.cabinView.getStairsDisplay().setText(name);
             ((ElevatorButton)this.cabinView.getButton(name)).selected();
@@ -67,4 +72,10 @@ public class ElevatorControl
     public ToolBarView getToolView() {
         return toolView;
     }  
+
+    public AnimationControl getAnimationControl() {
+        return animationControl;
+    }
+    
+    
 }
