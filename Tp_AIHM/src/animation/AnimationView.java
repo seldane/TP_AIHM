@@ -8,6 +8,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Timer;
 
 /**
@@ -92,15 +94,24 @@ public class AnimationView extends javax.swing.JPanel implements ActionListener
         this.repaint();
     }
 
+    public boolean isClosing() {
+        return closing;
+    }
+
+    public void setClosing(boolean closing) {
+        this.closing = closing;
+    }
+
     @Override
     public void actionPerformed(ActionEvent ae) 
     {
+        //Elevator Movement
         if(this.up)
             this.posY--;
         else if(this.down)
             this.posY++;
-        else
-            ;
+        
+        //FloorEvent
         if(this.posY == 680)
         {
             this.control.floorEvent(0);
@@ -117,19 +128,12 @@ public class AnimationView extends javax.swing.JPanel implements ActionListener
         {
             this.control.floorEvent(3);
         }
-        else{}
-        
-        if(this.elevatorGate == 0)
+        else
         {
-            this.opening = false;
-            this.closing = true;
+            //this.control.userPushedButton(-1);
         }
-        if(this.elevatorGate == 101)
-        {
-            this.elevatorGate--;
-            this.closing = false;
-        }
-        
+           
+        //Gate Movement
         if(this.opening)
         {
             this.elevatorGate--;
@@ -137,6 +141,24 @@ public class AnimationView extends javax.swing.JPanel implements ActionListener
         else if(this.closing)
         {
             this.elevatorGate++;
+        }
+        
+        //GateEvent
+        if(this.elevatorGate == 0)
+        {
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(AnimationView.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            this.askedFloor = -1;
+            this.opening = false;
+            this.closing = true;
+        }
+        if(this.elevatorGate == 101)
+        {
+            this.elevatorGate--;
+            this.closing = false;
         }
     }
     
