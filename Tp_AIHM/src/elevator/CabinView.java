@@ -2,10 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package view;
+package elevator;
 
-import control.ElevatorControl;
-import form.ElevatorButton;
+import elevator.ElevatorControl;
+import elevator.ElevatorButton;
 import javax.swing.JLabel;
 
 /**
@@ -48,6 +48,8 @@ public class CabinView extends javax.swing.JPanel
         Title.setText("Cabine");
         add(Title);
         Title.setBounds(158, 23, 68, 30);
+
+        StairsDisplay.setText("0");
         add(StairsDisplay);
         StairsDisplay.setBounds(45, 71, 50, 29);
         add(ThirdButton);

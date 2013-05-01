@@ -2,14 +2,10 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package control;
+package elevator;
 
-import view.CabinView;
-import view.ToolBarView;
-import view.ElevatorView;
-import abstraction.ElevatorAbstract;
-import form.ElevatorButton;
-import view.MainFrame;
+import main.MainFrame;
+import elevator.ElevatorButton;
 
 /**
  *

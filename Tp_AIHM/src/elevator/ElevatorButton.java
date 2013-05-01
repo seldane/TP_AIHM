@@ -1,6 +1,5 @@
-package form;
+package elevator;
 
-import control.ElevatorControl;
 import javax.swing.JLabel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
